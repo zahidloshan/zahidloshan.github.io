@@ -32,10 +32,36 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <style>
-        #particle-js
+        /* Add this style to adjust particles.js z-index */
+        #particles-js {
+            height: 100vh;
+            background-color: rgba(165, 42, 42, 0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1; /* Adjust this value as needed */
+        }
+
+        /* Add this style to adjust the z-index for the link */
+        #downloadLink {
+            z-index: 2; /* Ensure it's higher than particles.js */
+            position: relative; /* Ensure proper positioning */
+        }
+        #social_media
         {
-            height: 100%;
-            background: rgb(36, 34, 34);
+            z-index: 3; /* Ensure it's higher than particles.js */
+            position: relative; /* Ensure proper positioning */
+        }
+
+        h3.display-3 {
+            white-space: nowrap;
+        }
+
+        /* Media query for screens smaller than 768px (adjust as needed) */
+        @media (max-width: 767px) {
+            h3.display-3 {
+                font-size: 2rem; /* Adjust the font size as needed */
+            }
         }
     </style>
 
@@ -78,37 +104,31 @@
         </div>
     </nav>
     <!-- Navbar End -->
-<!-- 
-    <div id="particles-js" style="height: 100vh; background-color: brown;">
-        
-    </div> -->
-    
-
-
-
 
     <!-- Header Start -->
     <div class="container-fluid bg-light my-6 mt-0" id="home" style="position: relative;">
         <!-- Particles js start -->
-        <div id="particles-js" style="height: 100vh; background-color: rgba(165, 42, 42, 0); position: absolute; top: 0; left: 0; z-index: 2;"></div>
+        <div id="particles-js"></div>
         <!-- Particles js end -->
-        <div class="container" >
+        <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 py-6 pb-0 pt-lg-0">
                     <h3 class="text-primary mb-3">I'm</h3>
-                    <h3 class="display-3 mb-3"  style="white-space: nowrap;">Zahid Hasan Loshan</h3>
+                    <h3 class="display-3 mb-3" style="white-space: nowrap;">Zahid Hasan Loshan</h3>
                     <h2 class="typed-text-output d-inline"></h2>
                     <div class="typed-text d-none">Backend Developer, Web Developer</div>
                     <div class="d-flex align-items-center pt-5">
-                        <a href="zahidloshan.pdf" class="btn btn-primary py-3 px-4 me-5" id="downloadLink">Download CV</a>
-                        
+                        <a href="zahidloshan.pdf" class="btn btn-primary btn-lg py-3 px-4 me-5" id="downloadLink" download>
+                            <i class="fas fa-download me-2"></i> Download CV
+                        </a>
+
                         <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                            <span></span>
+                        data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                        <span></span>
                         </button>
                         <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
                     </div>
-                    <div class="d-flex pt-2">
+                    <div class="d-flex pt-2" id="social_media">
                         <a class="btn btn-square btn-primary me-2" href="https://github.com/zahidloshan"><i class="fab fa-github"></i></a>
                         <a class="btn btn-square btn-primary me-2" href="https://www.facebook.com/zahidloshan"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-twitter"></i></a>
@@ -116,7 +136,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="img/profile.png" alt="" id="particles-js">
+                    <img class="img-fluid" src="img/profile.png" alt="">
                 </div>
             </div>
         </div>
