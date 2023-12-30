@@ -26,13 +26,13 @@ var pJS = function (tag_id, params) {
                 },
             },
             color: {
-                value: "#fff",
+                value: "#6244c5",
             },
             shape: {
                 type: "circle",
                 stroke: {
                     width: 0,
-                    color: "#ff0000",
+                    color: "#ffc448",
                 },
                 polygon: {
                     nb_sides: 5,
@@ -66,7 +66,7 @@ var pJS = function (tag_id, params) {
             line_linked: {
                 enable: true,
                 distance: 100,
-                color: "#fff",
+                color: "#6244c5",
                 opacity: 1,
                 width: 1,
             },
@@ -843,8 +843,7 @@ var pJS = function (tag_id, params) {
                 init();
             }
         } else if (
-
-        /* on click event */
+            /* on click event */
             pJS.interactivity.events.onclick.enable &&
             isInArray("bubble", pJS.interactivity.events.onclick.mode)
         ) {
